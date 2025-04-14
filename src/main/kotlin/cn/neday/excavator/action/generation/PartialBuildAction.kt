@@ -7,7 +7,7 @@ import java.io.File
 
 
 class PartialBuildAction : BaseGenerationAnAction() {
-    override val command = "dart run build_runner build"
+    override val command = "fvm dart run build_runner build"
     override val title = "Building"
     override val successMessage = "Complete!\nRunning build successfully."
     override val errorMessage = "Could not running build!"

@@ -19,6 +19,8 @@
 </table>
 
 <!-- Plugin description -->
+FLUTTER-TOOLKIT FORK WIH FVM SUPPORT
+
 An advanced Android Studio plugin designed to enhance and streamline your daily Flutter development workflow.
 
 Flutter ToolKit(Flutter Build Runner Helper), to make it easier to execute build_runner commands.
@@ -26,15 +28,15 @@ Flutter ToolKit(Flutter Build Runner Helper), to make it easier to execute build
 Adds the following build_runner commands to Android Studio:
 
 | Action       | Description                                                  |
-| ------------ | ------------------------------------------------------------ |
+| ------------ |--------------------------------------------------------------|
 | Kill Gradle  | Kill Gradle if a current task is running                     |
 | Kill Flutter | Kill Flutter if a current task is running                    |
-| Analyze      | flutter analyze                                              |
-| Pub get      | flutter pub get                                              |
-| Build        | dart run build_runner build                           |
-| Rebuild      | dart run build_runner build --delete-conflicting-outputs |
-| Watch        | dart run build_runner watch                           |
-| Clean        | dart run build_runner clean                           |
+| Analyze      | fvm flutter analyze                                          |
+| Pub get      | fvm flutter pub get                                          |
+| Build        | fvm dart run build_runner build                              |
+| Rebuild      | fvm dart run build_runner build --delete-conflicting-outputs |
+| Watch        | fvm dart run build_runner watch                              |
+| Clean        | fvm dart run build_runner clean                              |
 
 There are two basic ways to invoke a command:
 
