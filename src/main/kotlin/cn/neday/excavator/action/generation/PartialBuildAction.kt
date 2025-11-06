@@ -23,12 +23,15 @@ class PartialBuildAction : BaseGenerationAnAction() {
         val element = event.getData(CommonDataKeys.VIRTUAL_FILE) ?: return showErrorMessage(message)
         val elementURI = File(element.path).toURI()
         // Get relative path
-        val relativePath = projectURI.relativize(elementURI).path.let { path ->
-            if (element.isDirectory) path.plus("**")
-            else path
-        }
-        // Set and execute command
-        val command = "$command --build-filter=\"$relativePath\""
+        / ✅ new: always use folder (if file → parent)
+        val targetFolder = if (element.isDirectory) element else element.parent
+        val folderURI = File(targetFolder.path).toURI()
+
+        // ✅ changed: use folderURI instead of elementURI
+        val relativePath = projectURI.relativize(folderURI).path
+
+        // ✅ changed: always append ** for folder builds
+        val command = "$command --build-filter=\"${relativePath}**\""
         execCommand(project, projectPath, command)
     }
 }
